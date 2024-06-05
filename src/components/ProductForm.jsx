@@ -1,6 +1,4 @@
-import { useState } from "react";
 function ProductForm() {
-  const [form, setForm] = useState({});
   return (
     <form className="post-form">
       <h1>Create Product Form</h1>
@@ -12,10 +10,7 @@ function ProductForm() {
             name="name"
             type="text"
             placeholder="Enter name here"
-            value={form.name}
-            onChange={(event) => {
-              setForm({ ...form, name: event.target.value });
-            }}
+            onChange={() => {}}
           />
         </label>
       </div>
@@ -27,10 +22,7 @@ function ProductForm() {
             name="image"
             type="text"
             placeholder="Enter image url here"
-            value={form.image}
-            onChange={(event) => {
-              setForm({ ...form, image: event.target.value });
-            }}
+            onChange={() => {}}
           />
         </label>
       </div>
@@ -42,10 +34,7 @@ function ProductForm() {
             name="price"
             type="number"
             placeholder="Enter price here"
-            value={form.price}
-            onChange={(event) => {
-              setForm({ ...form, price: event.target.value });
-            }}
+            onChange={() => {}}
           />
         </label>
       </div>
@@ -57,30 +46,14 @@ function ProductForm() {
             name="description"
             type="text"
             placeholder="Enter description here"
-            value={form.description}
-            onChange={(event) => {
-              setForm({ ...form, description: event.target.value });
-            }}
+            onChange={() => {}}
             rows={4}
             cols={30}
           />
         </label>
       </div>
       <div className="form-actions">
-        <button
-          type="submit"
-          onClick={() => {
-            const newForm = {
-              name: form.name,
-              price: form.price,
-              image: form.image,
-              description: form.description,
-            };
-            alert(JSON.stringify(newForm, null, "\n"));
-          }}
-        >
-          Create
-        </button>
+        <button type="submit">Create</button>
       </div>
     </form>
   );
